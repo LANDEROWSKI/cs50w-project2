@@ -2,7 +2,7 @@
 
 <!-- CSS -->
 {% block CSS %}
-<link rel="stylesheet" href="">
+<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
 {% endblock %}
 
 <!-- Titulo -->
@@ -10,19 +10,23 @@
 
 <!-- Body -->
 {% block content %}
+
     <section>
         <div class="form-box">
             <div class="form-value">
-                <h2>Bienvenido a DISCO</h2>
-                <div class="inputbox">
-                    <input type="text" 
-                    class="form-control"
-                    id="username"
-                    autocomplete="off"
-                    autofocus
-                    aria-describedby="userHelp"
-                    required>
-                </div>
+                <form action="/inicio" method="POST">
+                    <h2>Bienvenido a FLACK</h2>
+                    <div class="inputbox">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                        <input type="text" 
+                        id="username"
+                        name="username"
+                        autocomplete="off"
+                        required>
+                        <label for="">Usuario</label>
+                    </div>
+                    <button type="submit">Bienvenido ONI-CHAN</button>
+                </form>
             </div>
         </div>
     </section>
