@@ -97,7 +97,7 @@ def joined():
     emit('status', {
         'userJoined': session.get('username'),
         'channel': room,
-        'msg': str(session.get('username')) + ' se ha unido al canal.'},
+        'msg': str(session.get('username')) + ' ha aterrizado a la partida.'},
         room=room)
 
 @socketio.on('send message')
