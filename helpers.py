@@ -6,6 +6,6 @@ def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         if session.get("username") is None:
-            return redirect("/inicio")
+            return redirect("/signin")
         return f(*args, **kwargs)
     return decorated_function

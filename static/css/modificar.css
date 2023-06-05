@@ -1,0 +1,53 @@
+.boton{
+    margin-top: 20px;
+}
+button{
+    width: 100%;
+    height: 35px;
+    border-radius: 40px;
+    background-color: greenyellow;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+h2{
+    text-align: center;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-top: 20px;
+    color: orange;
+    -webkit-text-stroke: 2px black;
+
+}
+
+input{
+    margin-top: 40px;
+    left: 5px;
+    font-size: 2em;
+    width: 40px;
+    justify-content: center;
+    align-items: center; 
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    min-height: 100vh;
+    width: 100%;
+    /* background: #00ff00; */
+    background: url('/static/images/fondo1.jpg');
+    background-size: 100%;
+}
+.form-box{
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background: url('/static/images/jack.jpg');
+    border-radius: 10%;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

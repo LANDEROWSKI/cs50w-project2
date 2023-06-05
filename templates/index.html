@@ -1,57 +1,48 @@
 {% extends "layout.html" %} 
 
 {% block CSS %}
-
+<link rel="stylesheet" href="{{url_for('static', filename='css/siu.css')}}">
 {% endblock%}
 
-<!-- Title -->
-{% block title %} Nuevo Canal {% endblock %}
+{% block title %} Crear Canal {% endblock %}
 
-<!-- Body -->
 {% block content %}
-<div class="custom-1">
-  <h2 style="margin-bottom: 10px">
-    <span class="display-5">
-      Crear un nuevo
-      <span class="spann">Canal</span>
-    </span>
-  </h2>
-</div>
-<div class="custom-window">
-  <form action="/crear" method="post">
-    <div class="form-group">
-      <input
-        type="text"
-        class="form-control"
-        name="channel"
-        id="channel"
-        autocomplete="off"
-        placeholder="Nombre..."
-        autofocus
-        required
-      />
-    </div>
-    <!-- Boton crear -->
-    <button id="crear" type="submit">
-      <div class="svg-wrapper-1">
-        <div class="svg-wrapper">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="currentColor"
-            class="bi bi-plus-circle-fill"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"
-            />
-          </svg>
+<section>
+  <div class="form-box">
+      <div class="form-value">
+        <div class="custom-1">
+          <h2 style="margin-bottom: 10px">
+            <span class="display-5">
+              Crear un nuevo
+              <span class="spann">Canal</span>
+            </span>
+          </h2>
         </div>
-        <span>Crear</span>
+        <div class="custom-window">
+          <form action="/create" method="post">
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                name="channel"
+                id="channel"
+                autocomplete="off"
+                placeholder="Nombre..."
+                autofocus
+                required
+              />
+            </div>
+            <div class="crear">
+              <button id="crear" type="submit">
+                Crear Canal
+              </button>
+            </div>
+        
+          </form>
+        </div>
       </div>
-    </button>
-  </form>
-</div>
+  </div>
+</section>
+
 <h1 style="display: none" id="channelsList">{{channels}}</h1>
 {% endblock %}

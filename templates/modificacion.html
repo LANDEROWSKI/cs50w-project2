@@ -1,23 +1,36 @@
 {% extends "layout.html" %}
 
+{% block CSS %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/modificar.css')}}">
+{% endblock %}
+
 {% block title %} Ajustes {% endblock %}
 
 {% block content %}
 
-<div class="personalizar">
-    <h2>Cambia el nombre de Usuario</h2>
-</div>
 
-<div class="ventana-ajuste">
-<form action="/modificacion" method="POST">
-    <div class="form-group">
-        <input type="text" class="form-control" name="username id="username autocomplete="off" placeholder="Modificar Nombre">
+<section>
+    <div class="form-box">
+        <div class="form-value">
+            <div class="custom1">
+                <h2>Cambia el nombre de Usuario</h2>
+            </div>
+            
+            <div class="custom-window">
+            <form action="/change" method="POST">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="username" id="username" autocomplete="off" placeholder="Modificar Nombre">
+                </div>
+                <div class="boton">
+                    <button type="submit">Modificar</button>
+                </div>
+
+            </div>
+        </div>
     </div>
-    <button class="btn">Modificar</button>
+</section>
+
 </form>
-
-</div>
-
 
 
 

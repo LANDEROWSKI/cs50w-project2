@@ -1,20 +1,19 @@
 {% extends "layout.html" %}
 
-<!-- CSS -->
+
 {% block CSS %}
 <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
 {% endblock %}
 
-<!-- Titulo -->
+
 {% block title %} Bienvenido {% endblock %}
 
-<!-- Body -->
 {% block content %}
 
     <section>
         <div class="form-box">
             <div class="form-value">
-                <form action="/inicio" method="POST">
+                <form action="/signin" method="POST">
                     <h2>Bienvenido a FLACK</h2>
                     <div class="inputbox">
                         <ion-icon name="person-circle-outline"></ion-icon>

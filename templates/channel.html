@@ -2,108 +2,67 @@
 
 
 {% block CSS %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/canal.css')}}">
+{% endblock %}
 
-{% endblock%}
-
-<!-- Title -->
 {% block title %} {{ session.current_channel }} {% endblock %}
 
-<!-- Body -->
 {% block content %}
-<div class="custom-1">
-  <h1 style="margin-bottom: 10px">
-    <span class="display-5">
-      Canal:
-      <span class="spann">{{ session.current_channel }}</span>
-    </span>
-  </h1>
-</div>
-<div class="custom-window">
-  <div id="chat-box" class="list-group">
-    <ul id="chat">
-      {%- if messages -%}
-      <!-- * -->
-      {%- for message in messages -%}
 
-      <li class="messageBox">
-        <strong class="user">{{message[1]}} </strong
-        ><small class="time">{{message[0]}}</small><br /><span class="msg"
-          >{{ message [2] }}</span
-        >
-      </li>
-      <!-- -- -->
-      {%- endfor -%}
-      <p class="message-info">
-        {{ '--- Mensajes Anteriores --- ' }}{{- '\n' -}}
-      </p>
-      {%- endif -%}
-    </ul>
-  </div>
-
-  <div id="message-box">
-    <div class="form-border">
-      <div class="form-row">
-        <div class="form-group col-sm">
-          <div class="input-group">
-            <textarea
-              id="comment"
-              class="form-control"
-              rows="1"
-              autocomplete="off"
-              required
-            ></textarea>
+<section>
+  <div class="form-box">
+      <div class="form-value">
+        <div class="custom-1">
+          <h1 style="margin-bottom: 10px">
+            <span class="display-5">
+              Canal:
+              <span class="spann">{{ session.current_channel }}</span>
+            </span>
+          </h1>
+        </div>
+        <div class="custom-window">
+          <div id="chat-box" class="list-group">
+            <ul id="chat">
+              {%- if messages -%}
+        
+              {%- for message in messages -%}
+        
+              <li class="messageBox">
+                <strong class="user">{{message[1]}} </strong><small class="time">{{message[0]}}</small><br /><span
+                  class="msg">{{ message [2] }}</span>
+              </li>
+              {%- endfor -%}
+              <p class="message-info">
+                {{ '--- Mensajes Anteriores --- ' }}{{- '\n' -}}
+              </p>
+              {%- endif -%}
+            </ul>
+          </div>
+      
+          <div id="message-box">
+            <div class="form-border">
+              <div class="form-row">
+                <div class="form-group col-sm">
+                  <div class="input-group">
+                    <textarea id="comment" class="form-control" rows="1" autocomplete="off" required></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group" style="margin-right: 4px">
+            <button id="send-button" type="reset">
+                Enviar
+            </button>
+            <button id="leave" type="button">
+                Abandonar canal
+            </button>
           </div>
         </div>
       </div>
-    </div>
   </div>
-  <div class="form-group" style="margin-right: 4px">
-    <!-- Boton enviar -->
-    <button id="send-button" type="reset">
-      <div class="svg-wrapper-1">
-        <div class="svg-wrapper">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            width="24"
-            height="24"
-          >
-            <path fill="none" d="M0 0h24v24H0z"></path>
-            <path
-              fill="currentColor"
-              d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
-            ></path>
-          </svg>
-        </div>
-        <span>Enviar</span>
-      </div>
-    </button>
-    <!-- Boton abandoar -->
-    <button id="leave" type="button">
-      <div class="svg-wrapper-1">
-        <div class="svg-wrapper">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="currentColor"
-            class="bi bi-box-arrow-right"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"
-            />
-            <path
-              fill-rule="evenodd"
-              d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"
-            />
-          </svg>
-        </div>
-        <span>Abandonar canal</span>
-      </div>
-    </button>
-  </div>
-</div>
+</section>
+
+
 
 {% endblock %}
